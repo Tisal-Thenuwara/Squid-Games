@@ -58,6 +58,12 @@ class Doll
     }
 }
 
+//This creates the track that players will have to cross
+function createTrack()
+{
+    
+}
+
 //creates new doll
 let doll = new Doll();
 //time passes first so doll can load
