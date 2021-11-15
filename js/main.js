@@ -33,13 +33,14 @@ class Doll
     //moved doll loader code here
     constructor()
     {
-        loader.load("../models/scene.gltf", function(gltf)
+        loader.load("../models/scene.gltf", (gltf) =>
         {
             scene.add(gltf.scene);
             //scales the doll to a smaller size
             gltf.scene.scale.set(.4, .4, .4);
             //positions doll in center
             gltf.scene.position.set(0, -1, 0);
+            this.doll = gltf.scene;
         })
     }
     //This will make the doll look back
@@ -51,9 +52,15 @@ class Doll
 
 //creates new doll
 let doll = new Doll();
+//time passes first so doll can load
+setTimeout(() => 
+{
+    doll.lookBack()
+}, 1000);
+
 //look back
 //creates issue. looks back before doll is created.
-doll.lookBack();
+// doll.lookBack();
 
 //renderer.render(scene, camera);
 //This adds the cube manually
