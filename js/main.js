@@ -15,6 +15,10 @@ renderer.setClearColor( 0xb7c3f3, 1);
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add( light )
 
+//global variables
+const start_position = 3;
+const end_position = -start_position;
+
 function createCube(size, positionX )
 {
     //Adds a cube to the scene
@@ -65,7 +69,7 @@ class Doll
 //This creates the track that players will have to cross
 function createTrack()
 {
-    createCube({w: .2, h: 1.5, d: 1}, 3)
+    createCube({w: .2, h: 1.5, d: 1}, start_position)
 }
 
 createTrack()
