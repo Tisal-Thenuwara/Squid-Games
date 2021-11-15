@@ -19,6 +19,7 @@ scene.add( light )
 const start_position = 3;
 const end_position = -start_position;
 
+//This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
 {
     //Adds a cube to the scene
@@ -71,6 +72,7 @@ class Doll
 //This creates the track that players will have to cross
 function createTrack()
 {
+    //3 cubes for the track
     createCube({w: start_position * 2 + .2, h: 1.5, d: 1}, 0, 0, 0xe5a716).position.z = -1;
     createCube({w: .2, h: 1.5, d: 1}, start_position, -.35);
     createCube({w: .2, h: 1.5, d: 1}, end_position, .35);
@@ -79,16 +81,24 @@ function createTrack()
 
 createTrack();
 
-class player
+//player class 
+class Player
 {
     constructor()
     {
-        const geometry = new THREE.SphereGeometry( 15, 32, 16 );
-        const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+        //uses a sphere instead of cube
+        const geometry = new THREE.SphereGeometry( .3, 32, 16 );
+        const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
         const sphere = new THREE.Mesh( geometry, material );
+        sphere.position.z = 1;
+        sphere.position.x = start_position;
         scene.add( sphere );
     }
 }
+
+//creates new player
+const player = new Player()
+
 
 //creates new doll
 let doll = new Doll();
