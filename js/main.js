@@ -44,3 +44,13 @@ function animate() {
 	renderer.render( scene, camera );
 }
 animate();
+
+//resizes canvas when needed
+window.addEventListener('resize', onwindowResize, false);
+
+function onwindowResize()
+    {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth,window.innerHeight)
+    }
