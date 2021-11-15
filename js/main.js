@@ -16,6 +16,8 @@ document.body.appendChild( renderer.domElement );
 
 camera.position.z = 5;
 
+const loader = new three.GLTFLoader();
+
 //renderer.render(scene, camera);
 //This adds the cube manually
 
