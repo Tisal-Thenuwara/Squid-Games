@@ -8,7 +8,8 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 //Adds it to our page
 document.body.appendChild( renderer.domElement );
 
-
+//adds background color
+renderer.setClearColor( 0xb7c3f3, 1);
 
 //Adds light to the scene since we cant see anything without light
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
