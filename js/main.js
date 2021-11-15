@@ -8,6 +8,10 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 //Adds it to our page
 document.body.appendChild( renderer.domElement );
 
+//Adds light to the scene since we cant see anything without light
+const light = new THREE.AmbientLight( 0xffffff ); // soft white light
+scene.add( light )
+
 //Adds a cube to the scene
 // const geometry = new THREE.BoxGeometry();
 // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
@@ -17,11 +21,12 @@ document.body.appendChild( renderer.domElement );
 camera.position.z = 5;
 
 //loads the doll file in models folder
-const loader = new three.GLTFLoader();
+const loader = new THREE.GLTFLoader()
 loader.load("../models/scene.gltf", function(gltf)
 {
     scene.add(gltf.scene);
-    animate();
+    //scales the doll to a smaller size
+    gltf.scene.scale.set(.4, .4, .4);
 })
 
 //renderer.render(scene, camera);
