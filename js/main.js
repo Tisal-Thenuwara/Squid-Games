@@ -46,12 +46,15 @@ class Doll
     //This will make the doll look back
     lookBackward()
     {
-        this.doll.rotation.y = -3.15;
+        // this.doll.rotation.y = -3.15;
+        //using gsap to animate it smoothly
+        gsap.to(this.doll.rotation, {y: -3.15, duration: .45})
     }
     //This will make the doll look forward
     lookForward()
     {
-        this.doll.rotation.y = 0;
+        // this.doll.rotation.y = 0;
+        gsap.to(this.doll.rotation, {y: 0, duration: .45})
     }
 }
 
@@ -60,7 +63,7 @@ let doll = new Doll();
 //time passes first so doll can load
 setTimeout(() => 
 {
-    doll.lookBack()
+    doll.lookBackward()
 }, 1000);
 
 //look back
