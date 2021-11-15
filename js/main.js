@@ -15,11 +15,14 @@ renderer.setClearColor( 0xb7c3f3, 1);
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add( light )
 
-//Adds a cube to the scene
-// const geometry = new THREE.BoxGeometry();
-// const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
+function createCube()
+{
+    //Adds a cube to the scene
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    const cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
+}
 
 camera.position.z = 5;
 
