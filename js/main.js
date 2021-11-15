@@ -72,7 +72,7 @@ function createTrack()
 {
     createCube({w: .2, h: 1.5, d: 1}, start_position, -.35);
     createCube({w: .2, h: 1.5, d: 1}, end_position, .35);
-    createCube({w: .2, h: 1.5, d: 1}, 0, .35);
+    createCube({w: start_position * 2, h: 1.5, d: 1}, 0, 0);
 }
 
 createTrack();
