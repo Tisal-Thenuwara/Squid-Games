@@ -93,6 +93,23 @@ class Player
         sphere.position.z = 1;
         sphere.position.x = start_position;
         scene.add( sphere );
+        this.player = sphere;
+        this.playerInfo = 
+        {
+            positionX: start_position,
+            velocity: -0.01
+        }
+    }
+
+    run(param) 
+    {
+        
+    }
+
+    update()
+    {
+        this.playerInfo.positionX += this.playerInfo.velocity
+        this.player.position.x = this.playerInfo.positionX
     }
 }
 
@@ -126,6 +143,7 @@ function animate() {
     // cube.rotation.z += 0.01;
 
 	renderer.render( scene, camera );
+    player.update();
 }
 animate();
 
