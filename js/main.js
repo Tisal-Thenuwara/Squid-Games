@@ -22,6 +22,12 @@ camera.position.z = 5;
 //This function calls itself perpetually
 function animate() {
 	requestAnimationFrame( animate );
+
+    //Adds rotation animation to the cube
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    cube.rotation.z += 0.01;
+
 	renderer.render( scene, camera );
 }
 animate();
