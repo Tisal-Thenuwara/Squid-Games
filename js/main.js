@@ -97,18 +97,18 @@ class Player
         this.playerInfo = 
         {
             positionX: start_position,
-            velocity: -0.01
+            velocity: 0
         }
     }
 
     run(param) 
     {
-        
+        this.player.velocity = .01
     }
 
     update()
     {
-        this.playerInfo.positionX += this.playerInfo.velocity
+        this.playerInfo.positionX -= this.playerInfo.velocity
         this.player.position.x = this.playerInfo.positionX
     }
 }
