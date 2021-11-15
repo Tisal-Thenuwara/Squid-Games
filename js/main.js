@@ -8,6 +8,8 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 //Adds it to our page
 document.body.appendChild( renderer.domElement );
 
+
+
 //Adds light to the scene since we cant see anything without light
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add( light )
@@ -27,6 +29,8 @@ loader.load("../models/scene.gltf", function(gltf)
     scene.add(gltf.scene);
     //scales the doll to a smaller size
     gltf.scene.scale.set(.4, .4, .4);
+    //positions doll in center
+    gltf.scene.position.set(0, -1, 0);
 })
 
 //renderer.render(scene, camera);
