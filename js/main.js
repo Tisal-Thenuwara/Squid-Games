@@ -42,10 +42,18 @@ class Doll
             gltf.scene.position.set(0, -1, 0);
         })
     }
+    //This will make the doll look back
+    lookBack()
+    {
+        this.doll.rotation.y = 1;
+    }
 }
 
 //creates new doll
 let doll = new Doll();
+//look back
+//creates issue. looks back before doll is created.
+doll.lookBack();
 
 //renderer.render(scene, camera);
 //This adds the cube manually
