@@ -19,6 +19,7 @@ camera.position.z = 5;
 //renderer.render(scene, camera);
 //This adds the cube manually
 
+//This function calls itself perpetually
 function animate() {
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
