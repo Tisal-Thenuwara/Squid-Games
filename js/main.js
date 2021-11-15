@@ -16,7 +16,13 @@ document.body.appendChild( renderer.domElement );
 
 camera.position.z = 5;
 
+//loads the doll file in models folder
 const loader = new three.GLTFLoader();
+loader.load("../models/scene.gltf", function(gltf)
+{
+    scene.add(gltf.scene);
+    animate();
+})
 
 //renderer.render(scene, camera);
 //This adds the cube manually
