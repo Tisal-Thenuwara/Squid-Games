@@ -71,7 +71,7 @@ class Doll
 //This creates the track that players will have to cross
 function createTrack()
 {
-    createCube({w: start_position * 2, h: 1.5, d: 1}, 0, 0).position.z = -.8;
+    createCube({w: start_position * 2 + .2, h: 1.5, d: 1}, 0, 0, 0xe5a716).position.z = -1;
     createCube({w: .2, h: 1.5, d: 1}, start_position, -.35);
     createCube({w: .2, h: 1.5, d: 1}, end_position, .35);
     
