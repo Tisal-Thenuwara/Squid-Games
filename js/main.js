@@ -25,14 +25,27 @@ camera.position.z = 5;
 
 //loads the doll file in models folder
 const loader = new THREE.GLTFLoader()
-loader.load("../models/scene.gltf", function(gltf)
+
+
+//class called Doll to contain methods
+class Doll
 {
-    scene.add(gltf.scene);
-    //scales the doll to a smaller size
-    gltf.scene.scale.set(.4, .4, .4);
-    //positions doll in center
-    gltf.scene.position.set(0, -1, 0);
-})
+    //moved doll loader code here
+    constructor()
+    {
+        loader.load("../models/scene.gltf", function(gltf)
+        {
+            scene.add(gltf.scene);
+            //scales the doll to a smaller size
+            gltf.scene.scale.set(.4, .4, .4);
+            //positions doll in center
+            gltf.scene.position.set(0, -1, 0);
+        })
+    }
+}
+
+//creates new doll
+let doll = new Doll();
 
 //renderer.render(scene, camera);
 //This adds the cube manually
