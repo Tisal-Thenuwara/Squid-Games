@@ -6,5 +6,3 @@ Refrences
 Tutorial video - https://youtu.be/4HSxX-EKJjw
 
 Squid games doll - https://sketchfab.com/3d-models/squid-game-giant-doll-7afd49dd07714651a6afa1fc4aac8576
-
-Test
