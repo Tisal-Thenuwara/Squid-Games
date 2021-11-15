@@ -15,10 +15,10 @@ renderer.setClearColor( 0xb7c3f3, 1);
 const light = new THREE.AmbientLight( 0xffffff ); // soft white light
 scene.add( light )
 
-function createCube()
+function createCube(size )
 {
     //Adds a cube to the scene
-    const geometry = new THREE.BoxGeometry();
+    const geometry = new THREE.BoxGeometry(size.w, size.h, size.d );
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     const cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
@@ -64,11 +64,14 @@ class Doll
 //This creates the track that players will have to cross
 function createTrack()
 {
-    
+    createCube({w: .2, h: 1.5, d: 1})
 }
+
+createTrack()
 
 //creates new doll
 let doll = new Doll();
+
 //time passes first so doll can load
 setTimeout(() => 
 {
