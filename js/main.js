@@ -101,9 +101,9 @@ class Player
         }
     }
 
-    run(param) 
+    run() 
     {
-        this.player.velocity = .01
+        this.playerInfo.velocity = .01
     }
 
     update()
@@ -115,7 +115,6 @@ class Player
 
 //creates new player
 const player = new Player()
-
 
 //creates new doll
 let doll = new Doll();
@@ -156,3 +155,13 @@ function onwindowResize()
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth,window.innerHeight)
     }
+
+//Listner to call run() when key pressed
+window.addEventListener('keydown', (e) => 
+{
+    if (e.key == "ArrowUp")
+    {
+        player.run();
+    }
+    // alert(e.key)f
+})
