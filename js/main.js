@@ -117,7 +117,8 @@ class Player
     //Decreses velocity making player stop
     stop()
     {
-        this.playerInfo.velocity = 0;
+        // this.playerInfo.velocity = 0;
+        gsap.to(this.playerInfo, {velocity: 0, duration: .1})
     }
 }
 
