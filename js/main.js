@@ -80,9 +80,9 @@ class Doll
     {
         //adding Math.random causes doll to glitch
         this.lookBackward()
-        await delay((Math.random * 1000) + 1000)
+        await delay((Math.random() * 1000) + 1000)
         this.lookForward()
-        await delay((Math.random * 750) + 750)
+        await delay((Math.random() * 750) + 750)
         //This is a recursive function
         this.start();
     }
