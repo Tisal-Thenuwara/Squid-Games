@@ -25,7 +25,7 @@ const text = document.querySelector(".text");
 //time limit for the game
 const TIMIT_LIMIT = 10;
 //game status is handled here
-const gamestat = "loading";
+let gamestat = "loading";
 
 //This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
@@ -174,6 +174,7 @@ async function init()
 //calls the doll class and starts the game
 function startgame()
 {
+    gamestat = "started";
     let progressBar = createCube({w: 5,h: .1, d: 1}, 0)
     progressBar.position.y = 3.35;
     gsap.to(progressBar.scale, {x: 0, duration: TIMIT_LIMIT, ease: "none"})
@@ -224,7 +225,8 @@ function onwindowResize()
 //Listner to call run() when key pressed
 window.addEventListener('keydown', (e) => 
 {
-    if (e.key == "ArrowUp")
+    if(gamestat != "started") return
+    if(e.key == "ArrowUp")
     {
         player.run();
     }
