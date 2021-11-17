@@ -160,17 +160,25 @@ async function init()
     text.innerText = "Starting in 1"
     await delay(500)
     text.innerText = "Gooo!!!!"
-    Startgame()
+    //starts the game
+    startgame()
+}
+
+//calls the doll class and starts
+function startgame()
+{
+    doll.start()
 }
 
 //calls to initiate the game
 init()
 
 //time passes first so doll can load
-setTimeout(() => 
-{
-    doll.start()
-}, 1000);
+// setTimeout(() => 
+// {
+//     doll.start()
+// }, 1000);
+//This was moved to startgame()
 
 //look back
 //creates issue. looks back before doll is created.
