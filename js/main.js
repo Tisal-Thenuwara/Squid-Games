@@ -76,10 +76,14 @@ class Doll
     }
 
     //starts the doll
-    start()
+    async start()
     {
         this.lookBackward()
-
+        await delay(1000)
+        this.lookForward()
+        await delay(1000)
+        //This is a recursive function
+        this.start
     }
 }
 
