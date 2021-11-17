@@ -164,7 +164,10 @@ class Player
             alert("you lost!")
         }
 
-        
+        if(this.playerInfo.positionX < end_position)
+        {
+            alert("you won!")
+        }
     }
 }
 
