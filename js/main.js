@@ -20,6 +20,7 @@ scene.add( light )
 //global variables
 const start_position = 3;
 const end_position = -start_position;
+const text = document.querySelector(".text");
 
 //This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
@@ -146,6 +147,24 @@ const player = new Player()
 
 //creates new doll
 let doll = new Doll();
+
+//initaites the game
+async function init()
+{
+    await delay(500)
+    //changes loading text
+    text.innerText = "Starting in 3"
+    await delay(500)
+    text.innerText = "Starting in 2"
+    await delay(500)
+    text.innerText = "Starting in 1"
+    await delay(500)
+    text.innerText = "Gooo!!!!"
+    Startgame()
+}
+
+//calls to initiate the game
+init()
 
 //time passes first so doll can load
 setTimeout(() => 
