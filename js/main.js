@@ -137,6 +137,7 @@ class Player
     {
         this.playerInfo.positionX -= this.playerInfo.velocity
         this.player.position.x = this.playerInfo.positionX
+        this.check();
     }
 
     //Decreses velocity making player stop
@@ -144,6 +145,11 @@ class Player
     {
         // this.playerInfo.velocity = 0;
         gsap.to(this.playerInfo, {velocity: 0, duration: .1})
+    }
+
+    check()
+    {
+        
     }
 }
 
