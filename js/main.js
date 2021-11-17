@@ -167,6 +167,8 @@ async function init()
 //calls the doll class and starts
 function startgame()
 {
+    let progressBar = createCube({w: 5,h: .1, d: 1}, 0)
+    progressBar.position.y = 3.35;
     doll.start()
 }
 
