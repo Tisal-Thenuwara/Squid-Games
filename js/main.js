@@ -78,12 +78,13 @@ class Doll
     //starts the doll
     async start()
     {
+        //adding Math.random causes doll to glitch
         this.lookBackward()
-        await delay(1000)
+        await delay((Math.random * 1000) + 1000)
         this.lookForward()
-        await delay(1000)
+        await delay((Math.random * 750) + 750)
         //This is a recursive function
-        this.start
+        this.start();
     }
 }
 
