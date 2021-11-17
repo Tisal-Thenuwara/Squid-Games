@@ -149,7 +149,7 @@ let doll = new Doll();
 //time passes first so doll can load
 setTimeout(() => 
 {
-    doll.lookBackward()
+    doll.start()
 }, 1000);
 
 //look back
