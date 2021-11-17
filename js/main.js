@@ -159,7 +159,12 @@ class Player
 
     check()
     {
+        if(this.playerInfo.velocity > 0 && !isLookingBackward)
+        {
+            alert("you lost!")
+        }
 
+        
     }
 }
 
