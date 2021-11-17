@@ -20,7 +20,9 @@ scene.add( light )
 //global variables
 const start_position = 3;
 const end_position = -start_position;
+//manipulates the text
 const text = document.querySelector(".text");
+//time limit for the game
 const TIMIT_LIMIT = 10;
 
 //This function takes size, position, rotation and color
