@@ -26,6 +26,8 @@ const text = document.querySelector(".text");
 const TIMIT_LIMIT = 10;
 //game status is handled here
 let gamestat = "loading";
+//this checks if the doll is looking back
+let isLookingBackward = true;
 
 //This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
@@ -67,18 +69,26 @@ class Doll
             this.doll = gltf.scene;
         })
     }
+
     //This will make the doll look back
     lookBackward()
     {
         // this.doll.rotation.y = -3.15;
         //using gsap to animate it smoothly
         gsap.to(this.doll.rotation, {y: -3.15, duration: .45})
+
+        //doll is looking back
+        setTimeout(() => isLookingBackward = true, 450)
     }
+
     //This will make the doll look forward
     lookForward()
     {
         // this.doll.rotation.y = 0;
         gsap.to(this.doll.rotation, {y: 0, duration: .45})
+
+        // doll is looking forward
+        setTimeout(() => isLookingBackward = false, 150)
     }
 
     //starts the doll
@@ -149,7 +159,7 @@ class Player
 
     check()
     {
-        
+
     }
 }
 
