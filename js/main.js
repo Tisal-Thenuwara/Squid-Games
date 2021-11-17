@@ -163,6 +163,8 @@ async function init()
     text.innerText = "Gooo!!!!"
     //starts the game
     startgame()
+    await delay(1000)
+    text.innerText = "";
 }
 
 //calls the doll class and starts the game
