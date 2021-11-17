@@ -24,6 +24,8 @@ const end_position = -start_position;
 const text = document.querySelector(".text");
 //time limit for the game
 const TIMIT_LIMIT = 10;
+//game status is handled here
+const gamestat = "loading";
 
 //This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
