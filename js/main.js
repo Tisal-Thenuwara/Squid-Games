@@ -21,6 +21,7 @@ scene.add( light )
 const start_position = 3;
 const end_position = -start_position;
 const text = document.querySelector(".text");
+const TIMIT_LIMIT = 10;
 
 //This function takes size, position, rotation and color
 function createCube(size, positionX, rotY = 0, color = 0xfbc851)
@@ -164,11 +165,12 @@ async function init()
     startgame()
 }
 
-//calls the doll class and starts
+//calls the doll class and starts the game
 function startgame()
 {
     let progressBar = createCube({w: 5,h: .1, d: 1}, 0)
     progressBar.position.y = 3.35;
+    gsap.to(progressBar.scale, {x: 0, duration: TIMIT_LIMIT, ease: "none"})
     doll.start()
 }
 
