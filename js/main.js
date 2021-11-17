@@ -101,15 +101,23 @@ class Player
         }
     }
 
+    //Increases velocity making player run
     run() 
     {
         this.playerInfo.velocity = .01
     }
 
+    //Updates player info for the game
     update()
     {
         this.playerInfo.positionX -= this.playerInfo.velocity
         this.player.position.x = this.playerInfo.positionX
+    }
+
+    //Decreses velocity making player stop
+    stop()
+    {
+        this.playerInfo.velocity = 0;
     }
 }
 
@@ -164,4 +172,13 @@ window.addEventListener('keydown', (e) =>
         player.run();
     }
     // alert(e.key)f
+})
+
+//Listner to call stop() when key released
+window.addEventListener('keyup', (e) => 
+{
+    if (e.key == "ArrowUp")
+    {
+        player.stop();
+    }
 })
