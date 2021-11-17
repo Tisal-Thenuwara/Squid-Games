@@ -69,6 +69,13 @@ class Doll
         // this.doll.rotation.y = 0;
         gsap.to(this.doll.rotation, {y: 0, duration: .45})
     }
+
+    //starts the doll
+    start()
+    {
+        this.lookBackward()
+        
+    }
 }
 
 //This creates the track that players will have to cross
