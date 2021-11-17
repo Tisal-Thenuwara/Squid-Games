@@ -39,6 +39,11 @@ camera.position.z = 5;
 //loads the doll file in models folder
 const loader = new THREE.GLTFLoader()
 
+//delays when called by specified amount
+function delay(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //class called Doll to contain methods
 class Doll
@@ -74,7 +79,7 @@ class Doll
     start()
     {
         this.lookBackward()
-        
+
     }
 }
 
