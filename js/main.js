@@ -78,7 +78,7 @@ class Doll
         gsap.to(this.doll.rotation, {y: -3.15, duration: .45})
 
         //doll is looking back
-        setTimeout(() => isLookingBackward = true, 450)
+        setTimeout(() => isLookingBackward = true, 150)
     }
 
     //This will make the doll look forward
@@ -88,7 +88,7 @@ class Doll
         gsap.to(this.doll.rotation, {y: 0, duration: .45})
 
         // doll is looking forward
-        setTimeout(() => isLookingBackward = false, 150)
+        setTimeout(() => isLookingBackward = false, 450)
     }
 
     //starts the doll
@@ -161,12 +161,16 @@ class Player
     {
         if(this.playerInfo.velocity > 0 && !isLookingBackward)
         {
-            alert("you lost!")
+            // alert("you lost!")
+            text.innerText = "You lose!"
+            gamestat = "over"
         }
 
-        if(this.playerInfo.positionX < end_position)
+        if(this.playerInfo.positionX < end_position + .4)
         {
-            alert("you won!")
+            // alert("you won!")
+            text.innerText = "You win!"
+            gamestat = "over"
         }
     }
 }
@@ -203,6 +207,12 @@ function startgame()
     progressBar.position.y = 3.35;
     gsap.to(progressBar.scale, {x: 0, duration: TIMIT_LIMIT, ease: "none"})
     doll.start()
+    setTimeout(() => {
+        if(gamestat != "over"){
+            text.innerText = "You ran out"
+            gamestat = "over"
+        }
+    }, TIMIT_LIMIT * 1000);
 }
 
 //calls to initiate the game
@@ -225,6 +235,7 @@ init()
 //This function calls itself perpetually
 function animate() {
 	requestAnimationFrame( animate );
+    if(gamestat == "over") return
 
     //Adds rotation animation to the cube
     // cube.rotation.x += 0.01;
